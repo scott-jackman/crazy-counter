@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="CrazyCounterTestSuite" verbose="1">
+    <test name="UnitTests">
+        <classes>
+            <class name="com.example.crazycounter.service.CounterServiceTest"/>
+            <class name="com.example.crazycounter.service.StartupNotificationServiceTest"/>
+            <class name="com.example.crazycounter.entity.CounterVariationTest"/>
+            <class name="com.example.crazycounter.discord.DiscordMessageListenerTest"/>
+        </classes>
+    </test>
+    
+    <test name="IntegrationTests">
+        <classes>
+            <class name="com.example.crazycounter.CrazyCounterApplicationTest"/>
+        </classes>
+    </test>
+</suite>

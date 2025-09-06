@@ -1,0 +1,53 @@
+[versions]
+# Language & Framework
+kotlin = "2.0.20"
+spring-boot = "3.3.4"
+spring-dependency-management = "1.1.6"
+
+# Discord
+jda = "5.0.0-beta.24"
+
+# Database
+h2 = "2.3.232"
+
+# JSON Processing
+jackson-kotlin = "2.17.2"
+
+# Testing
+testng = "7.9.0"
+mockito-kotlin = "5.4.0"
+
+# Java Target
+java = "17"
+
+[libraries]
+# Spring Boot
+spring-boot-starter = { module = "org.springframework.boot:spring-boot-starter" }
+spring-boot-starter-data-jpa = { module = "org.springframework.boot:spring-boot-starter-data-jpa" }
+spring-boot-starter-test = { module = "org.springframework.boot:spring-boot-starter-test" }
+
+# Kotlin
+kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect" }
+jackson-module-kotlin = { module = "com.fasterxml.jackson.module:jackson-module-kotlin", version.ref = "jackson-kotlin" }
+
+# Discord
+jda = { module = "net.dv8tion:JDA", version.ref = "jda" }
+
+# Database
+h2 = { module = "com.h2database:h2", version.ref = "h2" }
+
+# Testing
+testng = { module = "org.testng:testng", version.ref = "testng" }
+mockito-kotlin = { module = "org.mockito.kotlin:mockito-kotlin", version.ref = "mockito-kotlin" }
+
+[bundles]
+spring-boot = ["spring-boot-starter", "spring-boot-starter-data-jpa"]
+kotlin = ["kotlin-reflect", "jackson-module-kotlin"]
+testing = ["testng", "mockito-kotlin"]
+
+[plugins]
+spring-boot = { id = "org.springframework.boot", version.ref = "spring-boot" }
+spring-dependency-management = { id = "io.spring.dependency-management", version.ref = "spring-dependency-management" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin-spring = { id = "org.jetbrains.kotlin.plugin.spring", version.ref = "kotlin" }
+kotlin-jpa = { id = "org.jetbrains.kotlin.plugin.jpa", version.ref = "kotlin" }

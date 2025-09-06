@@ -1,0 +1,75 @@
+version: 2
+updates:
+  # Enable version updates for Gradle dependencies (including version catalogs)
+  - package-ecosystem: "gradle"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "04:00"
+    open-pull-requests-limit: 10
+    reviewers:
+      - "@scott.jackman"
+    assignees:
+      - "@scott.jackman"
+    commit-message:
+      prefix: "deps"
+      prefix-development: "deps-dev"
+      include: "scope"
+    labels:
+      - "dependencies"
+      - "gradle"
+      - "version-catalog"
+    groups:
+      spring-boot:
+        patterns:
+          - "org.springframework.boot*"
+          - "io.spring.dependency-management"
+        update-types:
+          - "minor"
+          - "patch"
+      kotlin:
+        patterns:
+          - "org.jetbrains.kotlin*"
+          - "kotlin*"
+        update-types:
+          - "minor"
+          - "patch"
+      discord:
+        patterns:
+          - "net.dv8tion*"
+        update-types:
+          - "minor"
+          - "patch"
+      testing:
+        patterns:
+          - "org.testng*"
+          - "org.mockito*"
+        update-types:
+          - "minor"
+          - "patch"
+      database:
+        patterns:
+          - "com.h2database*"
+        update-types:
+          - "minor"
+          - "patch"
+      
+  # Enable version updates for GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "04:00"
+    open-pull-requests-limit: 5
+    reviewers:
+      - "@scott.jackman"
+    assignees:
+      - "@scott.jackman"
+    commit-message:
+      prefix: "ci"
+      include: "scope"
+    labels:
+      - "dependencies"
+      - "github-actions"
