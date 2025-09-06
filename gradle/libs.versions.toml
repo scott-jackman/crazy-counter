@@ -5,7 +5,7 @@ spring-boot = "3.3.4"
 spring-dependency-management = "1.1.6"
 
 # Discord
-jda = "5.0.0-beta.24"
+jda = "6.0.0-preview"
 
 # Database
 h2 = "2.3.232"
