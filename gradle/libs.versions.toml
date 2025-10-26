@@ -8,7 +8,7 @@ spring-dependency-management = "1.1.7"
 jda = "5.0.0-beta.24"
 
 # Database
-h2 = "2.3.232"
+h2 = "2.4.240"
 mysql = "8.0.33"
 
 # JSON Processing
