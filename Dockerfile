@@ -6,8 +6,8 @@ WORKDIR /app
 # Create non-root user
 RUN addgroup -S spring && adduser -S spring -G spring
 
-# Copy the pre-built JAR
-COPY build/libs/*.jar app.jar
+# Copy the pre-built executable Spring Boot JAR
+COPY build/libs/crazy-counter-0.0.1-SNAPSHOT.jar app.jar
 
 # Change ownership
 RUN chown spring:spring app.jar
