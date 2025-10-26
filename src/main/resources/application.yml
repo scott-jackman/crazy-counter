@@ -1,4 +1,5 @@
 discord:
+  token: ${DISCORD_BOT_TOKEN:}  # Set via environment variable or .env file
   startup-notification:
     enabled: true
     message: "🚀 **Crazy Counter Bot is online!** Ready to start counting. Type `!counter status` for help."
@@ -21,4 +22,29 @@ spring:
 logging:
   level:
     com.example.crazycounter: DEBUG
+    net.dv8tion.jda: INFO
+
+---
+# Docker Profile - MySQL Configuration
+spring:
+  config:
+    activate:
+      on-profile: docker
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://mysql:3306/crazy_counter?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC}
+    driver-class-name: ${SPRING_DATASOURCE_DRIVER_CLASS_NAME:com.mysql.cj.jdbc.Driver}
+    username: ${SPRING_DATASOURCE_USERNAME:counter_user}
+    password: ${SPRING_DATASOURCE_PASSWORD:counter_password}
+  jpa:
+    database-platform: ${SPRING_JPA_DATABASE_PLATFORM:org.hibernate.dialect.MySQLDialect}
+    hibernate:
+      ddl-auto: ${SPRING_JPA_HIBERNATE_DDL_AUTO:update}
+    show-sql: ${SPRING_JPA_SHOW_SQL:true}
+  h2:
+    console:
+      enabled: false
+
+logging:
+  level:
+    com.example.crazycounter: ${LOGGING_LEVEL_COM_EXAMPLE_CRAZYCOUNTER:INFO}
     net.dv8tion.jda: INFO

@@ -1,0 +1,61 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: crazy-counter-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: crazy_counter
+      MYSQL_USER: counter_user
+      MYSQL_PASSWORD: counter_password
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - counter-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      timeout: 5s
+      retries: 10
+      interval: 5s
+
+  app:
+    build: .
+    container_name: crazy-counter-bot
+    restart: unless-stopped
+    depends_on:
+      mysql:
+        condition: service_healthy
+    environment:
+      # Discord Bot Token (set in .env file or override here)
+      DISCORD_BOT_TOKEN: ${DISCORD_BOT_TOKEN}
+
+      # Spring Profile
+      SPRING_PROFILES_ACTIVE: docker
+
+      # Database Configuration
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/crazy_counter?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      SPRING_DATASOURCE_USERNAME: counter_user
+      SPRING_DATASOURCE_PASSWORD: counter_password
+      SPRING_DATASOURCE_DRIVER_CLASS_NAME: com.mysql.cj.jdbc.Driver
+
+      # JPA Configuration
+      SPRING_JPA_DATABASE_PLATFORM: org.hibernate.dialect.MySQLDialect
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      SPRING_JPA_SHOW_SQL: true
+
+      # Logging
+      LOGGING_LEVEL_COM_EXAMPLE_CRAZYCOUNTER: INFO
+    networks:
+      - counter-network
+
+volumes:
+  mysql_data:
+    driver: local
+
+networks:
+  counter-network:
+    driver: bridge

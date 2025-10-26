@@ -4,11 +4,12 @@ A Spring Boot Discord bot written in Kotlin that implements counting games in Di
 
 ## Technology Stack
 
-- **Kotlin** 2.0.20 (latest stable)
-- **Spring Boot** 3.3.4 (latest stable) 
-- **Gradle** with Kotlin DSL
+- **Kotlin** 2.2.21 (latest stable)
+- **Spring Boot** 3.5.7 (latest stable)
+- **Gradle** 9.1.0 (latest stable)
+- **Java** 24 target (runs on Java 25)
 - **JDA** 5.0.0-beta.24 (Discord API)
-- **H2** in-memory database
+- **H2** in-memory database / **MySQL** (Docker)
 - **TestNG** 7.9.0 (testing framework)
 
 ## Setup
@@ -18,14 +19,18 @@ A Spring Boot Discord bot written in Kotlin that implements counting games in Di
    - Create a new application and bot
    - Copy the bot token
 
-2. **Configure the Bot Token**:
-   - Set environment variable: `DISCORD_BOT_TOKEN=your-bot-token-here`
-   - Or update `src/main/resources/application.yml`
+2. **Configure the Bot Token** (see [SECURITY.md](SECURITY.md) for detailed guide):
+   ```bash
+   cp .env.example .env
+   # Edit .env and add your Discord bot token
+   ```
 
 3. **Invite Bot to Server**:
    - In Discord Developer Portal, go to OAuth2 > URL Generator
    - Select "bot" scope and "Send Messages", "Read Message History" permissions
    - Use generated URL to invite bot to your server
+
+> **🔒 Security**: Never commit your `.env` file! See [SECURITY.md](SECURITY.md) for complete token management guide.
 
 ## Running the Application
 
