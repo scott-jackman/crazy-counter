@@ -9,7 +9,7 @@ jda = "5.0.0-beta.24"
 
 # Database
 h2 = "2.3.232"
-mysql = "8.0.33"
+mysql = "9.4.0"
 
 # JSON Processing
 jackson-kotlin = "2.17.2"
