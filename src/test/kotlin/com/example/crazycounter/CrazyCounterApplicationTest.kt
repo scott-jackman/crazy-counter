@@ -1,10 +1,12 @@
 package com.example.crazycounter
 
 import org.springframework.boot.test.context.SpringBootTest
+import org.springframework.test.context.ActiveProfiles
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests
 import org.testng.annotations.Test
 
 @SpringBootTest
+@ActiveProfiles("test")
 class CrazyCounterApplicationTest : AbstractTestNGSpringContextTests() {
 
     @Test

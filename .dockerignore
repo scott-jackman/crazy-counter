@@ -1,0 +1,45 @@
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Gradle
+.gradle
+gradle
+gradlew
+gradlew.bat
+gradle.properties
+settings.gradle.kts
+build.gradle.kts
+
+# Build output (except for the JAR we want)
+build/*
+!build/libs/*.jar
+
+# Source code (not needed in runtime image)
+src
+
+# IDE
+.idea
+.vscode
+*.iml
+*.ipr
+*.iws
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Documentation
+README.md
+CLAUDE.md
+*.md
+
+# CI/CD
+.github
+
+# Dependencies config (not needed at runtime)
+gradle/libs.versions.toml
+
+# Test files
+testng.xml

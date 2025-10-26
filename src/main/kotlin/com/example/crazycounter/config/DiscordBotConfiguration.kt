@@ -7,10 +7,17 @@ import net.dv8tion.jda.api.JDABuilder
 import net.dv8tion.jda.api.requests.GatewayIntent
 import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Value
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 
 @Configuration
+@ConditionalOnProperty(
+    prefix = "discord",
+    name = ["enabled"],
+    havingValue = "true",
+    matchIfMissing = true
+)
 class DiscordBotConfiguration(
     @Value("\${discord.token}") private val token: String,
     private val messageListener: DiscordMessageListener,

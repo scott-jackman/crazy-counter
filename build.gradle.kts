@@ -31,6 +31,7 @@ dependencies {
     
     // Database
     runtimeOnly(libs.h2)
+    runtimeOnly(libs.mysql)
     
     // Testing
     testImplementation(libs.bundles.testing)
@@ -42,9 +43,9 @@ dependencies {
 }
 
 tasks.withType<KotlinCompile> {
-    kotlinOptions {
-        freeCompilerArgs += "-Xjsr305=strict"
-        jvmTarget = libs.versions.java.get()
+    compilerOptions {
+        freeCompilerArgs.add("-Xjsr305=strict")
+        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.fromTarget(libs.versions.java.get()))
     }
 }
 

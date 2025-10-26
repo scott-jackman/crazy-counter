@@ -1,0 +1,29 @@
+# Test Profile Configuration
+# This profile is used during automated testing and doesn't require a real Discord token
+
+discord:
+  enabled: false  # Disable Discord bot initialization in tests
+  token: test-token-not-used  # Mock token (not used when enabled=false)
+  startup-notification:
+    enabled: false  # Disable startup notifications in tests
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: password
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: false  # Reduce noise in test output
+  h2:
+    console:
+      enabled: false
+
+logging:
+  level:
+    com.example.crazycounter: WARN
+    net.dv8tion.jda: ERROR
+    org.springframework: WARN
