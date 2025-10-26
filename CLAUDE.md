@@ -8,13 +8,13 @@ Crazy Counter is a Spring Boot Discord bot written in Kotlin that facilitates co
 
 ## Technology Stack
 
-- **Language**: Kotlin 2.0.20 (latest stable)
-- **Framework**: Spring Boot 3.3.4 (latest stable)
+- **Language**: Kotlin 2.2.21 (latest stable)
+- **Framework**: Spring Boot 3.5.7 (latest stable)
 - **Build Tool**: Gradle with Kotlin DSL
 - **Discord Library**: JDA 5.0.0-beta.24 (latest beta)
 - **Database**: H2 in-memory database with JPA
 - **Testing**: TestNG 7.9.0 with Mockito Kotlin
-- **Java Version**: 17
+- **Java Version**: 24
 
 ## Architecture
 
@@ -111,7 +111,7 @@ The project uses **TestNG** instead of JUnit for testing with the following bene
 - **Constructor Delegation**: Primary and secondary constructors in `CounterState`
 - **When Expressions**: Pattern matching in `CounterService.processCount()`
 - **Extension Functions**: Leverages Kotlin's concise syntax throughout
-- **Latest Kotlin 2.0.20**: Benefits from latest language improvements and performance optimizations
+- **Latest Kotlin 2.2.21**: Benefits from latest language improvements and performance optimizations
 
 ## GitHub Integration
 

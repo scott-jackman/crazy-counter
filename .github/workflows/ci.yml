@@ -32,7 +32,7 @@ jobs:
       if: success() || failure()
       with:
         name: TestNG Tests
-        path: build/reports/tests/test/TEST-*.xml
+        path: build/test-results/test/TEST-*.xml
         reporter: java-junit
         
     - name: Build application
