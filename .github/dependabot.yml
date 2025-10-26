@@ -9,9 +9,9 @@ updates:
       time: "04:00"
     open-pull-requests-limit: 10
     reviewers:
-      - "@scott.jackman"
+      - "@scott-jackman"
     assignees:
-      - "@scott.jackman"
+      - "@scott-jackman"
     commit-message:
       prefix: "deps"
       prefix-development: "deps-dev"
@@ -64,9 +64,9 @@ updates:
       time: "04:00"
     open-pull-requests-limit: 5
     reviewers:
-      - "@scott.jackman"
+      - "@scott-jackman"
     assignees:
-      - "@scott.jackman"
+      - "@scott-jackman"
     commit-message:
       prefix: "ci"
       include: "scope"
