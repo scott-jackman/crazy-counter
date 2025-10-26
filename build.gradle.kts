@@ -51,4 +51,8 @@ tasks.withType<KotlinCompile> {
 
 tasks.withType<Test> {
     useTestNG()
+    reports {
+        junitXml.required.set(true)
+        html.required.set(true)
+    }
 }
