@@ -22,17 +22,20 @@ repositories {
 dependencies {
     // Spring Boot
     implementation(libs.bundles.spring.boot)
-    
+
     // Kotlin
     implementation(libs.bundles.kotlin)
-    
+
     // Discord
     implementation(libs.jda)
-    
+
+    // Configuration
+    implementation(libs.dotenv.kotlin)
+
     // Database
     runtimeOnly(libs.h2)
     runtimeOnly(libs.mysql)
-    
+
     // Testing
     testImplementation(libs.bundles.testing)
     testImplementation(libs.spring.boot.starter.test) {

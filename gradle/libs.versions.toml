@@ -18,6 +18,9 @@ jackson-kotlin = "2.17.2"
 testng = "7.9.0"
 mockito-kotlin = "5.4.0"
 
+# Configuration
+dotenv-kotlin = "6.4.1"
+
 # Java Target (Kotlin 2.2.x supports up to JVM target 24)
 java = "24"
 
@@ -41,6 +44,9 @@ mysql = { module = "com.mysql:mysql-connector-j", version.ref = "mysql" }
 # Testing
 testng = { module = "org.testng:testng", version.ref = "testng" }
 mockito-kotlin = { module = "org.mockito.kotlin:mockito-kotlin", version.ref = "mockito-kotlin" }
+
+# Configuration
+dotenv-kotlin = { module = "io.github.cdimascio:dotenv-kotlin", version.ref = "dotenv-kotlin" }
 
 [bundles]
 spring-boot = ["spring-boot-starter", "spring-boot-starter-data-jpa"]
