@@ -12,14 +12,14 @@ h2 = "2.4.240"
 mysql = "8.0.33"
 
 # JSON Processing
-jackson-kotlin = "2.20.0"
+jackson-kotlin = "2.20.1"
 
 # Testing
 testng = "7.11.0"
 mockito-kotlin = "6.1.0"
 
 # Configuration
-dotenv-kotlin = "6.4.1"
+dotenv-kotlin = "6.5.1"
 
 # Java Target (Kotlin 2.2.x supports up to JVM target 24)
 java = "24"
