@@ -44,14 +44,14 @@ jobs:
       run: ./gradlew build
       
     - name: Upload build artifacts
-      uses: actions/upload-artifact@v6
+      uses: actions/upload-artifact@v7
       if: success()
       with:
         name: build-artifacts
         path: build/libs/*.jar
         
     - name: Upload test reports
-      uses: actions/upload-artifact@v6
+      uses: actions/upload-artifact@v7
       if: always()
       with:
         name: test-reports
